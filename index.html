@@ -19,43 +19,47 @@
         <h1>To do app</h1>
       </div>
 
-      <div>
+      <div class="form-container">
         <form class="add-todo-form" action="">
-          <input id="add-input-field" type="text" placeholder="Input your todo" />
-          <button id="add-todo-btn">
+          <div class="input-div">
+
+            <input id="add-input-field" type="text" placeholder="Input your todo" />
+            <button id="add-todo-btn">
             <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-            >
+              >
               <path
-                d="M6 12H18"
-                stroke="#FFFFFF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              d="M6 12H18"
+              stroke="#FFFFFF"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               />
               <path
-                d="M12 18L12 6"
-                stroke="#FFFFFF"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+              d="M12 18L12 6"
+              stroke="#FFFFFF"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
               />
             </svg>
           </button>
+        </div>
         </form>
       </div>
+      
+      <div class="divider"> </div>
 
-      <div>
+      <div class="list-container">
         <ul class="todo-list">
-          <li></li>
         </ul>
       </div>
     </div>
-
+    
     <script src="./script.js"></script>
   </body>
 </html>

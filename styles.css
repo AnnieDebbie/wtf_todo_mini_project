@@ -8,7 +8,7 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.container{
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,17 +27,61 @@ body {
     font-weight: 400;
 }
 
+/* #add-input-field, #add-todo-btn */
+.form-container{
+    width:71%
+}
+
+.input-div {
+    position: relative;
+}
+
 #add-input-field {
-    width: 250px;
+    width: 82%;
     height: 32px;
-    padding-left:0.5em; 
+    padding-left: 0.5em;
     background: #DBE2EF;
     border: 1px solid rgba(177, 177, 177, 0.4);
     border-radius: 5px;
 }
 
 #add-todo-btn {
+    position: absolute;
+    height: 34px;
+    width: 18%;
+    right: 1px;
     background: #3F72AF;
     border: none;
     border-radius: 0px 5px 5px 0px;
+}
+
+.divider{
+    width: 91%;
+    margin:15px 13px;
+}
+
+.divider:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.list-container{
+    width:90%;
+}
+
+.todo-item {
+    background: #DBE2EF;
+    border-radius: 5px;
+    margin-top:5px;
+    list-style: none;
+    padding:13px 0px;
+    text-align: center;
+}
+
+.error-message{
+    color:  red;
+    text-transform: capitalize;
 }

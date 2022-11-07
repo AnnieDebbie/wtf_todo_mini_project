@@ -28,8 +28,8 @@ body {
 }
 
 /* #add-input-field, #add-todo-btn */
-.form-container{
-    width:71%
+.form-container {
+    width: 71%
 }
 
 .input-div {
@@ -45,19 +45,22 @@ body {
     border-radius: 5px;
 }
 
-#add-todo-btn {
+#add-todo-btn,
+#save-edit-btn {
     position: absolute;
     height: 34px;
     width: 18%;
-    right: 1px;
+    /* right: 0.8px; */
     background: #3F72AF;
     border: none;
     border-radius: 0px 5px 5px 0px;
 }
 
-.divider{
+
+
+.divider {
     width: 91%;
-    margin:15px 13px;
+    margin: 15px 13px;
 }
 
 .divider:after {
@@ -68,20 +71,37 @@ body {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.list-container{
-    width:90%;
+.list-container {
+    width: 90%;
 }
 
 .todo-item {
     background: #DBE2EF;
     border-radius: 5px;
-    margin-top:5px;
+    margin-top: 5px;
     list-style: none;
-    padding:13px 0px;
-    text-align: center;
+    padding: 13px 0px;
+    display: flex;
+    justify-content: space-around;
+    text-transform: capitalize;
 }
 
-.error-message{
-    color:  red;
+.btn-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px
+}
+
+.hidden {
+    display: none;
+}
+
+.btn {
+    border: none;
+    background-color: transparent;
+}
+
+.error-message {
+    color: red;
     text-transform: capitalize;
 }

@@ -4,7 +4,7 @@ const form = document.querySelector(".add-todo-form");
 const addBtn = document.getElementById("add-todo-btn");
 const saveEditBtn = document.getElementById("save-edit-btn");
 const errorDiv = document.querySelector(".error-container");
-let editedTodo;
+let editedTodoItem;
 
 const editIcon = `
 <svg id="edit-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ const deleteIcon = `<svg id="delete-icon" width="24" height="24" viewBox="0 0 24
 </svg>
 `;
 
-const fulllistItem = `<span class="btn-icons">
+const listItemButtons = `<span class="btn-icons">
       <button type="button" class=" btn edit-todo-btn">
       ${editIcon}
       </button>
@@ -42,10 +42,10 @@ function createListItem(enteredTodo) {
   <span class="checkmark"></span>
   </label>
   
-  <span> 
+  <span class="entered-todo"> 
   ${enteredTodo} 
    </span>`;
-  listItem.innerHTML += fulllistItem;
+  listItem.innerHTML += listItemButtons;
   listItem.classList.add("todo-item");
   todoList.prepend(listItem);
 }
@@ -62,12 +62,15 @@ function addTodoHandler(e) {
 function editTodo(e) {
   let todo = e.target.closest("span").parentElement;
   addTodoInput.value = todo.innerText;
+  addBtn.classList.add("hidden");
+  saveEditBtn.classList.remove("hidden");
+  editedTodoItem = e.target.closest(".todo-item");
 }
 
 function saveEditHandler(e) {
   e.preventDefault();
-  console.log(editedTodo.children);
-  editedTodo.children[1].textContent = addTodoInput.value;
+  console.log(editedTodoItem.children);
+  editedTodoItem.children[1].textContent = addTodoInput.value;
 
   setTimeout(() => {
     addTodoInput.value = "";
@@ -77,8 +80,8 @@ function saveEditHandler(e) {
 }
 
 function deleteTodo(e) {
-  const todo = e.target.closest("span").parentElement;
-  todo.remove();
+  const todoItem = e.target.closest(".todo-item");
+  todoItem.remove();
 }
 
 function renderError() {
@@ -101,15 +104,10 @@ function toggleCheckTodo(e) {
 }
 
 todoList.addEventListener("click", function (e) {
-  if (e.target && e.target.parentElement.classList.contains("edit-todo-btn")) {
+  console.log(e.target);
+  if (e.target && e.target.closest(".edit-todo-btn")) {
     editTodo(e);
-    addBtn.classList.add("hidden");
-    saveEditBtn.classList.remove("hidden");
-    editedTodo = e.target.parentElement.parentElement.parentElement;
-  } else if (
-    e.target &&
-    e.target.parentElement.classList.contains("delete-todo-btn")
-  ) {
+  } else if (e.target && e.target.closest(".delete-todo-btn")) {
     deleteTodo(e);
   } else if (e.target && e.target.closest(".checkbox-container")) {
     toggleCheckTodo(e);
@@ -117,11 +115,10 @@ todoList.addEventListener("click", function (e) {
 });
 
 form.addEventListener("click", function (e) {
-  const clicked = e.target.closest("#add-todo-btn");
-  if (e.target && e.target.parentElement === clicked) {
+  if (e.target && e.target.closest("#add-todo-btn")) {
     addTodoHandler(e);
   }
-  if (e.target && e.target.id === "save-edit-btn") {
+  if (e.target && e.target.closest("#save-edit-btn")) {
     saveEditHandler(e);
   }
 });

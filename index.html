@@ -29,6 +29,7 @@
             />
             <button id="add-todo-btn">
               <svg
+              id="add-icon"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -60,7 +61,12 @@
       <div class="divider"></div>
 
       <div class="list-container">
-        <ul class="todo-list"></ul>
+        <ul class="todo-list">
+          <div class="errorDiv hidden">
+
+            <p class="error-message">Invalid input, please put in a Todo</p>
+          </div>
+        </ul>
       </div>
     </div>
 

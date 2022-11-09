@@ -8,13 +8,13 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+.btn {
+    background-color: transparent;
+    border: none;
 }
 
+/* CARD */
 .card {
     border-radius: 10px;
     background-color: #F9F7F7;
@@ -25,6 +25,13 @@ body {
 .card h1 {
     text-transform: capitalize;
     font-weight: 400;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 /* FORM */
@@ -96,19 +103,18 @@ body {
     padding: 13px 0px;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    align-content: center;
     text-transform: capitalize;
 }
 
-.todo-item>span {
-    align-self: center;
 
-}
 
 .btn-icons {
     display: flex;
     justify-content: flex-end;
     gap: 5px;
-    align-self: center;
+    width: 53px;
 }
 
 .hidden {
@@ -117,19 +123,15 @@ body {
 
 .checkbox-container {
     position: relative;
-}
-
-input[type=checkbox]{
-    visibility: hidden;
-}
-
-.checkbox {
     display: block;
-    padding-left: 45px;
-    margin-bottom: 15px;
     cursor: pointer;
     font-size: 20px;
 }
+
+input[type=checkbox] {
+    visibility: hidden;
+}
+
 
 .checkmark {
     position: absolute;
@@ -150,10 +152,6 @@ input[type=checkbox]{
     display: block;
 }
 
-.todo-done{
-    filter: blur(2px) grayscale(100%);
-}
-
 
 .checkmark:after {
     left: 8px;
@@ -167,12 +165,33 @@ input[type=checkbox]{
     transform: rotate(45deg);
 }
 
-.btn {
-    border: none;
-    background-color: transparent;
+.todo-done {
+    filter: blur(2px) grayscale(100%);
+    transition: filter 3s;
 }
 
 .error-message {
     color: red;
     text-transform: capitalize;
+    text-align: center;
+    font-size: 22px;
+}
+
+@media only screen and (min-width:768px) {
+    .input-div {
+        width: 80%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #add-input-field {
+        height: 42px;
+        padding-left: 0.8em;
+    }
+
+    #add-todo-btn,
+    #save-edit-btn {
+        height: 44px;
+    }
 }

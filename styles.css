@@ -1,3 +1,4 @@
+/* COMMONALITIES */
 body {
     background-color: #3F72AF;
 }
@@ -27,14 +28,14 @@ body {
     font-weight: 400;
 }
 
+
+/* FORM */
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
-
-/* FORM */
 
 .app-heading {
     margin-bottom: 19.6px;
@@ -108,11 +109,9 @@ body {
     text-transform: capitalize;
 }
 
-.entered-todo{
+.entered-todo {
     flex-basis: 50%;
 }
-
-
 
 .btn-icons {
     display: flex;
@@ -136,7 +135,6 @@ input[type=checkbox] {
     visibility: hidden;
 }
 
-
 .checkmark {
     position: absolute;
     top: 0%;
@@ -155,7 +153,6 @@ input[type=checkbox] {
 .check-todo:checked~.checkmark:after {
     display: block;
 }
-
 
 .checkmark:after {
     left: 8px;
@@ -181,7 +178,31 @@ input[type=checkbox] {
     font-size: 22px;
 }
 
+/* FOOTER */
+
+.copyright-message {
+    text-align: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    color: #FFFFFF;
+}
+
+.figma-link {
+    color: #FFFFFF;
+    border-bottom: double #F9F7F7;
+}
+
+.figma-link:hover {
+    font-size: larger;
+    color: #000000;
+}
+
 @media only screen and (min-width:768px) {
+    .card {
+     padding: 35px;
+    }
+
     .input-div {
         width: 80%;
         text-align: center;
@@ -189,7 +210,7 @@ input[type=checkbox] {
         margin-right: auto;
     }
 
-    .entered-todo{
+    .entered-todo {
         flex-basis: 70%;
     }
 

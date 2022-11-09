@@ -27,9 +27,14 @@ body {
     font-weight: 400;
 }
 
-/* #add-input-field, #add-todo-btn */
+/* FORM */
+
+.app-heading {
+    margin-bottom: 19.6px;
+}
+
 .form-container {
-    width: 71%;
+    width: 73%;
 }
 
 .input-div {
@@ -50,13 +55,19 @@ body {
     position: absolute;
     height: 34px;
     width: 18%;
-    /* right: 0.8px; */
+    right: 1px;
     background: #3F72AF;
     border: none;
     border-radius: 0px 5px 5px 0px;
     color: #F9F7F7;
 
 }
+
+#save-edit-btn {
+    width: 30%
+}
+
+/* DIVIDER */
 
 .divider {
     width: 91%;
@@ -75,6 +86,8 @@ body {
     width: 90%;
 }
 
+/* TODOS */
+
 .todo-item {
     background: #DBE2EF;
     border-radius: 5px;
@@ -86,14 +99,72 @@ body {
     text-transform: capitalize;
 }
 
+.todo-item>span {
+    align-self: center;
+
+}
+
 .btn-icons {
     display: flex;
     justify-content: flex-end;
-    gap: 5px
+    gap: 5px;
+    align-self: center;
 }
 
 .hidden {
     display: none;
+}
+
+.checkbox-container {
+    position: relative;
+}
+
+input[type=checkbox]{
+    visibility: hidden;
+}
+
+.checkbox {
+    display: block;
+    padding-left: 45px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #F9F7F7;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-todo:checked~.checkmark:after {
+    display: block;
+}
+
+.todo-done{
+    filter: blur(2px) grayscale(100%);
+}
+
+
+.checkmark:after {
+    left: 8px;
+    bottom: 5px;
+    width: 6px;
+    height: 12px;
+    border: solid #3F72AF;
+    border-width: 0 4px 4px 0px;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }
 
 .btn {

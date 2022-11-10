@@ -50,6 +50,14 @@ function createListItem(enteredTodo) {
   todoList.prepend(listItem);
 }
 
+function renderError() {
+  errorDiv.classList.remove("hidden");
+
+  setTimeout(() => {
+    errorDiv.classList.add("hidden");
+  }, 4000);
+}
+
 function addTodoHandler(e) {
   e.preventDefault();
 
@@ -82,14 +90,6 @@ function saveEditHandler(e) {
 function deleteTodo(e) {
   const todoItem = e.target.closest(".todo-item");
   todoItem.remove();
-}
-
-function renderError() {
-  errorDiv.classList.remove("hidden");
-
-  setTimeout(() => {
-    errorDiv.classList.add("hidden");
-  }, 4000);
 }
 
 function toggleCheckTodo(e) {
